@@ -1,17 +1,11 @@
-import React , {useEffect, useState} from "react";
+import React , { useState} from "react";
 import "./App.css";
+import Windwidth from "./Windwidth";
 
 function App() {
 
   const [show , setShow] = useState(true);
-  const [wind , setWind] = useState(window.innerWidth);
-
-  useEffect(() => {
-    window.addEventListener("resize",() => {
-      setWind(window.innerWidth);
-    })
-  },[])
-
+ 
   function handleChange(){
     setShow(prevShow => !prevShow);
   }
@@ -19,7 +13,7 @@ function App() {
   return (
     <div className="cont">
       <button onClick={handleChange}>Toggle Window Tracker</button>
-      {show ? <h2>{`Window width : ${wind}`}</h2> : null}
+      {show ? <Windwidth/> : null}
     </div>
   );
 }
