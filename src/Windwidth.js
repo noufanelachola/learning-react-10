@@ -10,15 +10,15 @@ function Windwidth() {
             console.log("setting Up");
             setWidth(window.innerWidth);
         }
+
         window.addEventListener("resize",handleResize);
 
-        return () => {
+        return function() {
             console.log("cleaning.....")
             window.removeEventListener("resize",handleResize);
         }
 
       },[]);
-    
 
     return(
         <div>

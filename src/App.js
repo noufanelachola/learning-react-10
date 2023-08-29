@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="cont">
       <button onClick={handleChange}>Toggle Window Tracker</button>
-      {show ? <Windwidth/> : null}
+      {show && <Windwidth/>}
     </div>
   );
 }
